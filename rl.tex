@@ -8,7 +8,7 @@
 \usepackage{fontawesome}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
-
+\usepackage{mathtools}
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 %\usepackage{caption}
@@ -215,7 +215,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 		\begin{column}{0.1\textwidth}
 		\end{column}
 	\end{columns}
-	
+	\vfill
 	\begin{columns}
 		\begin{column}{0.1\textwidth}
 		\end{column}
@@ -269,7 +269,62 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 		\begin{column}{0.1\textwidth}
 		\end{column}
 	\end{columns}
+	\vfill
+	\begin{columns}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+		\begin{column}{0.2\textwidth}
+			k = 1
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{tikzpicture}[scale=1]
+			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
+			\node at (-0.75,+0.75) { 0 };
+			\node at (-0.25,+0.75) {-1.7};
+			\node at (+0.25,+0.75) {-2};
+			\node at (+0.75,+0.75) {-1.7};
+			\node at (-0.75,+0.25) {-2};
+			\node at (-0.25,+0.25) {-2};
+			\node at (+0.25,+0.25) {-1};
+			\node at (+0.75,+0.25) {-1};
+			\node at (-0.75,-0.25) {-1};
+			\node at (-0.25,-0.25) {-1};
+			\node at (+0.25,-0.25) {-1};
+			\node at (+0.75,-0.25) {-1};
 
+			\node at (-0.75,-0.75) {-1};
+			\node at (-0.25,-0.75) {-1};
+			\node at (+0.25,-0.75) {-1};
+			\node at (+0.75,-0.75) { 0  };
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.3\textwidth} 
+			\begin{tikzpicture}[scale=1]
+			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
+			\node at (-0.75,+0.75) { \faFlagCheckered };
+			\node at (-0.25,+0.75) { $\leftarrow$ };
+			\node at (+0.25,+0.75) {?};
+			\node at (+0.75,+0.75) {?};
+			\node at (-0.75,+0.25) {$\uparrow$};
+			\node at (-0.25,+0.25) {
+
+			};
+			\node at (+0.25,+0.25) {?};
+			\node at (+0.75,+0.25) {?};
+			\node at (-0.75,-0.25) {?};
+			\node at (-0.25,-0.25) {?};
+			\node at (+0.25,-0.25) {?};
+			\node at (+0.75,-0.25) {$\downarrow$};
+
+			\node at (-0.75,-0.75) {?};
+			\node at (-0.25,-0.75) {?};
+			\node at (+0.25,-0.75) {$\rightarrow$};
+			\node at (+0.75,-0.75) { \faFlagCheckered  };
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \section{Titleformats}
