@@ -46,38 +46,76 @@
 	\textsc{Reinforcement learning} is an area of machine learning concerned with how software agents ought to take actions in an environment so as to maximize some notion of cumulative reward.
 \end{frame}
 
+\begin{frame}[fragile]{Challenges in RL}
+	RL  vision  is about creating  systems that  are  capable  of  learning  how  to  adapt  in  the  real  world, solely based on trial-and-error.
+	
+	Challenges:
+	\begin{itemize}
+		\item The  optimal  policy  must  be  inferred  by  interacting with the environment. The only learning signal
+the agent receives is the reward.
+		\item Agents  must  deal  with  long-range  time  dependencies:
+Often the consequences of an action only materialise after
+many transitions of the environment \cite{Montague1999}.
+	\end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{What it is Not}
 Although RL can induce to an optimization, there are major differences within:
   \begin{itemize}[<+- | alert@+>]
-    \item \alert<4>{Supervised learning}
+    \item {Supervised learning}
 	\item Mathematical optimization
 	\item Genetic programming
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Metropolis}
-
-    
-
-  The \themename theme is a Beamer theme with minimal visual noise
-  inspired by the \href{https://github.com/hsrmbeamertheme/hsrmbeamertheme}{\textsc{hsrm} Beamer
-  Theme} by Benjamin Weiss.
-
-  Enable the theme by loading
-
-  \begin{verbatim}    \documentclass{beamer}
-    \usetheme{metropolis}\end{verbatim}
-
-  Note, that you have to have Mozilla's \emph{Fira Sans} font and XeTeX
-  installed to enjoy this wonderful typography.
+\section{Genetic Programming}
+\begin{frame}{Genetic Programming}
+	\textsc{GP} is a technique whereby computer programs are encoded as a set of genes that are then modified using an evolutionary algorithm.
+	\begin{itemize}
+		\item A number of chromosomes are randomly created.
+		\item Each chromosome is evaluated through a fitness function.
+		\item Best ones are selected, the others are disposed.
+		\item Chromosomes could be breded among the selected for a new generation.
+		\item Offsprings are randomly mutated.
+		\item Repeat until the score threshold is reached \cite{gf-gp}.
+	\end{itemize}
 \end{frame}
-\begin{frame}[fragile]{Sections}
-  Sections group slides of the same topic
 
-  \begin{verbatim}    \section{Elements}\end{verbatim}
-
-  for which \themename provides a nice progress indicator \ldots
+\begin{frame}{Crossover}
+	\begin{figure}
+		\includegraphics[scale=0.15]{img/ast-crossover.png}
+		\caption{The “breeding” is called crossover. The chromosome (in this case an \textsc{AST}), is merged between two individuals for searching a better function.}
+	\end{figure}	
 \end{frame}
+
+\begin{frame}{Strenghts on many local minima}
+\textsc{GP} may overtake gradient-based algorithms when the solution space has many local minima
+	\begin{figure}
+		\includegraphics[scale=0.16]{img/Rastrigin_function.png}
+		\caption{Rastrigin function}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Strenghts on no-differentiable functions}
+$f(x)$ is \textsc{differentiable} when it has always a finite derivative along the domain. 
+	\begin{figure}
+		\begin{tikzpicture}[scale=0.5]
+			\begin{axis}[
+			    xmin=-2, xmax=2,
+			    ymin=-1, ymax=2,
+			    axis lines=center,
+			    axis on top=true,
+			    domain=-1:1,
+			    ]
+			
+			    \addplot [mark=none,draw=red,ultra thick] {abs(x)};
+			\end{axis}
+		\end{tikzpicture}
+	    \caption{$f(x) = |x|$ has no derivative at $x = 0$.}
+	\end{figure}
+\textsc{GP} is not sensitive on \emph{latent} no-differentiable functions.	
+\end{frame}
+
 \section{Multi-armed Bandit}
 \begin{frame}{Multi-armed Bandit}
 	\begin{figure}[t!]	
@@ -147,11 +185,11 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 	\frametitle{How to evaluate an Agent?}
 	Given that:
 	\begin{itemize}
-		\item Agent maximizes future rewards.
-		\item $\pmb{\gamma}$ is the rewards' discount factor. 
 		\item Policy $\pmb{\pi}$ defines a particular way of acting.
 		\item $\mathbf{v_π(s)}$ is the expected return from $\mathbf{s}$ following $\pmb{\pi}$ \emph{thereafter}.
 		\item $\mathbf{q_π(s, a)}$ is the $\mathbf{v_π(s)}$ taking action $\mathbf{a}$
+		\item For maximizing future rewards, only the $\mathbf{max}$ $Q_\pi$ is considered. 
+		\item $\pmb{\gamma}$ is the rewards' discount factor. 
 	\end{itemize}
 	
 	A recursive algorithm could be indentified, known as the \textsc{Bellman equation}. Iteratevely computes the value $\mathbf{Q}$ from the terminal state:
@@ -223,7 +261,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			k = 1
 		\end{column}
 		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}[scale=1]
+			\begin{tikzpicture}[scale=1.1]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { 0 };
 			\node at (-0.25,+0.75) {-1};
@@ -245,7 +283,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			\end{tikzpicture}
 		\end{column}
 		\begin{column}{0.3\textwidth} 
-			\begin{tikzpicture}[scale=1]
+			\begin{tikzpicture}[scale=1.1]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { \faFlagCheckered };
 			\node at (-0.25,+0.75) { $\leftarrow$ };
@@ -274,50 +312,102 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 		\begin{column}{0.1\textwidth}
 		\end{column}
 		\begin{column}{0.2\textwidth}
-			k = 1
+			k = 2
 		\end{column}
 		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}[scale=1]
+			\begin{tikzpicture}[scale=1.1]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { 0 };
 			\node at (-0.25,+0.75) {-1.7};
 			\node at (+0.25,+0.75) {-2};
-			\node at (+0.75,+0.75) {-1.7};
-			\node at (-0.75,+0.25) {-2};
+			\node at (+0.75,+0.75) {-2};
+			\node at (-0.75,+0.25) {-1.7};
 			\node at (-0.25,+0.25) {-2};
-			\node at (+0.25,+0.25) {-1};
-			\node at (+0.75,+0.25) {-1};
-			\node at (-0.75,-0.25) {-1};
-			\node at (-0.25,-0.25) {-1};
-			\node at (+0.25,-0.25) {-1};
-			\node at (+0.75,-0.25) {-1};
+			\node at (+0.25,+0.25) {-2};
+			\node at (+0.75,+0.25) {-2};
+			\node at (-0.75,-0.25) {-2};
+			\node at (-0.25,-0.25) {-2};
+			\node at (+0.25,-0.25) {-2};
+			\node at (+0.75,-0.25) {-1.7};
 
-			\node at (-0.75,-0.75) {-1};
-			\node at (-0.25,-0.75) {-1};
-			\node at (+0.25,-0.75) {-1};
+			\node at (-0.75,-0.75) {-2};
+			\node at (-0.25,-0.75) {-2};
+			\node at (+0.25,-0.75) {-1.7};
 			\node at (+0.75,-0.75) { 0  };
 			\end{tikzpicture}
 		\end{column}
 		\begin{column}{0.3\textwidth} 
-			\begin{tikzpicture}[scale=1]
+			\begin{tikzpicture}[scale=1.1]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { \faFlagCheckered };
 			\node at (-0.25,+0.75) { $\leftarrow$ };
-			\node at (+0.25,+0.75) {?};
+			\node at (+0.25,+0.75) { $\leftarrow$ };
 			\node at (+0.75,+0.75) {?};
 			\node at (-0.75,+0.25) {$\uparrow$};
-			\node at (-0.25,+0.25) {
-
-			};
+			\node at (-0.25,+0.25) {\includegraphics[scale=0.25]{img/left-up.png}	};
 			\node at (+0.25,+0.25) {?};
-			\node at (+0.75,+0.25) {?};
-			\node at (-0.75,-0.25) {?};
+			\node at (+0.75,+0.25) {$\downarrow$};
+			\node at (-0.75,-0.25) { $\uparrow$ };
 			\node at (-0.25,-0.25) {?};
-			\node at (+0.25,-0.25) {?};
+			\node at (+0.25,-0.25) {\includegraphics[scale=0.25]{img/down-right.png}};
 			\node at (+0.75,-0.25) {$\downarrow$};
 
 			\node at (-0.75,-0.75) {?};
-			\node at (-0.25,-0.75) {?};
+			\node at (-0.25,-0.75) {$\rightarrow$};
+			\node at (+0.25,-0.75) {$\rightarrow$};
+			\node at (+0.75,-0.75) { \faFlagCheckered  };
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+	\end{columns}
+	\vfill
+	\begin{columns}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+		\begin{column}{0.2\textwidth}
+			k = 3
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{tikzpicture}[scale=1.1]
+			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
+			\node at (-0.75,+0.75) { 0 };
+			\node at (-0.25,+0.75) {-2.4};
+			\node at (+0.25,+0.75) {-2.9};
+			\node at (+0.75,+0.75) {-3};
+			\node at (-0.75,+0.25) {-2.4};
+			\node at (-0.25,+0.25) {-2.9};
+			\node at (+0.25,+0.25) {-3};
+			\node at (+0.75,+0.25) {-2.9};
+			\node at (-0.75,-0.25) {-2.9};
+			\node at (-0.25,-0.25) {-3};
+			\node at (+0.25,-0.25) {-2.9};
+			\node at (+0.75,-0.25) {-2.4};
+
+			\node at (-0.75,-0.75) {-3};
+			\node at (-0.25,-0.75) {-2.9};
+			\node at (+0.25,-0.75) {-2.4};
+			\node at (+0.75,-0.75) { 0  };
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.3\textwidth} 
+			\begin{tikzpicture}[scale=1.1]
+			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
+			\node at (-0.75,+0.75) { \faFlagCheckered };
+			\node at (-0.25,+0.75) { $\leftarrow$ };
+			\node at (+0.25,+0.75) { $\leftarrow$ };
+			\node at (+0.75,+0.75) {\includegraphics[scale=0.25]{img/down-left.png}};
+			\node at (-0.75,+0.25) {$\uparrow$};
+			\node at (-0.25,+0.25) {\includegraphics[scale=0.25]{img/left-up.png}	};
+			\node at (+0.25,+0.25) {\includegraphics[scale=0.25]{img/down-left.png}};
+			\node at (+0.75,+0.25) {$\downarrow$};
+			\node at (-0.75,-0.25) { $\uparrow$ };
+			\node at (-0.25,-0.25) {\includegraphics[scale=0.25]{img/down-right.png}};
+			\node at (+0.25,-0.25) {\includegraphics[scale=0.25]{img/down-right.png}};
+			\node at (+0.75,-0.25) {$\downarrow$};
+
+			\node at (-0.75,-0.75) {\includegraphics[scale=0.25]{img/up-right.png}};
+			\node at (-0.25,-0.75) {$\rightarrow$};
 			\node at (+0.25,-0.75) {$\rightarrow$};
 			\node at (+0.75,-0.75) { \faFlagCheckered  };
 			\end{tikzpicture}
@@ -327,30 +417,31 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 	\end{columns}
 \end{frame}
 
-\section{Titleformats}
-
-
-\begin{frame}{Metropolis titleformats}
-	\themename supports 4 different titleformats:
+\section{Neural Networks in RL}
+\begin{frame}{Beyond the Gridworld}
+	In the Gridworld every state value $\mathbf{v_t}$ is stored in a table. 
+	The approach lacks scalability and is inherently limited to fairly low-dimension problems.
+	\begin{figure}
+		\includegraphics[scale=0.4]{img/dota2.jpg}
+		\caption{The state $\mathbf{v_t}$ might be a frame of a videogame \cite{dota2}}
+	\end{figure}
+\end{frame}
+\begin{frame}[fragile]{Deep Reinforcement Learning}
+Deep  learning  enables  RL  to  scale  to  decision-making
+problems  that  were  previously  intractable,  i.e.,  settings  with
+high-dimensional  state  and  action  spaces. \cite{arulkumaran2017brief}
 	\begin{itemize}
-		\item Regular
-		\item \textsc{Smallcaps}
-		\item \textsc{allsmallcaps}
-		\item ALLCAPS
+		\item Universal function approximator
+		\item Representation learning
 	\end{itemize}
-	They can either be set at once for every title type or individually.
+	Neural networks can learn the approximated value of $\mathbf{V_s}$ or $\mathbf{Q(s, a)}$ for any given \textsc{state/action space}.
 \end{frame}
+\section{Actor-Critic}
 
-{
-    \metroset{titleformat frame=smallcaps}
-\begin{frame}{Small caps}
-	This frame uses the \texttt{smallcaps} titleformat.
+\section{Deep Q-Learning}
+\begin{frame}
 
-	\begin{alertblock}{Potential Problems}
-		Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
-	\end{alertblock}
 \end{frame}
-}
 \begin{frame}[allowframebreaks]{References}
 
   \bibliography{rl}

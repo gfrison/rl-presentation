@@ -1,6 +1,9 @@
-\frametitle{Sections}
-Sections group slides of the same topic
-
-  \begin{verbatim}    \section{Elements}\end{verbatim}
-
-  for which \themename provides a nice progress indicator \ldots
+\frametitle{Deep Reinforcement Learning}
+Deep  learning  enables  RL  to  scale  to  decision-making
+problems  that  were  previously  intractable,  i.e.,  settings  with
+high-dimensional  state  and  action  spaces. \cite{arulkumaran2017brief}
+^^I\begin{itemize}
+^^I^^I\item Universal function approximator
+^^I^^I\item Representation learning
+^^I\end{itemize}
+^^INeural networks can learn the approximated value of $\mathbf{V_s}$ or $\mathbf{Q(s, a)}$ for any given \textsc{state/action space}.

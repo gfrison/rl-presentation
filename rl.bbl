@@ -1,8 +1,44 @@
 \begin{thebibliography}{1}
 
+\bibitem{arulkumaran2017brief}
+K.~Arulkumaran, M.~P. Deisenroth, M.~Brundage, and A.~A. Bharath.
+\newblock A brief survey of deep reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1708.05866}, 2017.
+
+\bibitem{gf-gp}
+{Giancarlo Frison}.
+\newblock {First Steps on Evolutionary Systems}.
+\newblock 2018.
+\newblock { link
+  https://labs.cx.sap.com/2018/07/02/first-steps-on-evolutionary-systems/}.
+
+\bibitem{mdp-process}
+{J. Zico Kolter}.
+\newblock {Markov Decision Process}.
+\newblock
+  {http://www.cs.cmu.edu/afs/cs/academic/class/15780-s16/www/slides/mdps.pdf}.
+
+\bibitem{mdp-robot}
+{John Williams}.
+\newblock 2015 darpa robotics challange.
+\newblock {Public domain}.
+
+\bibitem{Montague1999}
+P.~Montague.
+\newblock {Reinforcement Learning: An Introduction, by Sutton, R.S. and Barto,
+  A.G.}
+\newblock {\em Trends in Cognitive Sciences}, 3(9):360, 1999.
+
 \bibitem{donkey}
 {Omanomanoman}.
-\newblock {CC BY-SA 4.0}.
 \newblock {CC BY-SA 4.0, https://commons.wikimedia.org/}.
+
+\bibitem{dota2}
+{Valve Corporation}.
+\newblock {A screenshot from the video game Dota 2}.
+
+\bibitem{bandit}
+{Yamaguchi先生}.
+\newblock {CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)]}.
 
 \end{thebibliography}
