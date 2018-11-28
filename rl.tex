@@ -2,7 +2,7 @@
 
 \usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
-
+\usepackage{textgreek}
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 \usepackage{fontawesome}
@@ -10,6 +10,7 @@
 \usepgfplotslibrary{dateplot}
 \usepackage{mathtools}
 \usepackage{xspace}
+\usepackage{wrapfig}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 %\usepackage{caption}
 %\usepackage{hyperref}
@@ -113,7 +114,7 @@ $f(x)$ is \textsc{differentiable} when it has always a finite derivative along t
 		\end{tikzpicture}
 	    \caption{$f(x) = |x|$ has no derivative at $x = 0$.}
 	\end{figure}
-\textsc{GP} is not sensitive on \emph{latent} no-differentiable functions.	
+\textsc{GP} is tollerant to \emph{latent} no-differentiable functions.	
 \end{frame}
 
 \section{Multi-armed Bandit}
@@ -431,26 +432,149 @@ Deep  learning  enables  RL  to  scale  to  decision-making
 problems  that  were  previously  intractable,  i.e.,  settings  with
 high-dimensional  state  and  action  spaces. \cite{arulkumaran2017brief}
 	\begin{itemize}
-		\item Universal function approximator
-		\item Representation learning
+		\item \alert{Universal function approximator} Multilayer neural networks can approximate any continuous function to any degree of accuracy \cite{hornik1989multilayer}.
+		\pause
+		\item \alert{Representation learning} Automatically discover the representations needed for feature detection or classification from raw data, also known as \textsc{feature engeneering} \cite{bengio2013representation}.
 	\end{itemize}
 	Neural networks can learn the approximated value of $\mathbf{V_s}$ or $\mathbf{Q(s, a)}$ for any given \textsc{state/action space}.
 \end{frame}
-\section{Actor-Critic}
 
-\section{Deep Q-Learning}
-\begin{frame}
-
+\begin{frame}{Discrete space}
+	When the \textsc{action space} is limited by a set of options, \textit{(e.g. turn right, left)} the output layer could be a set of neurons as the number of possible actions.
+	\begin{figure}
+		\begin{tabular}{ |c|c|c|c| } 
+		 \hline
+			\textbf{A1} & \textbf{A2} & \textbf{A3} & \textbf{A4}  \\ [0.5ex] 
+		 \hline
+		 \hline
+			 0.21 & 0.27 & \textbf{0.30} & 0.21 \\ 
+		 \hline
+		\end{tabular}
+		\caption{Output layer with softmax}
+	\end{figure}
+	The choosed action is the one with the biggest $Q_t$ (\textsc{A3}).
 \end{frame}
+
+\begin{frame}{Exploration in discrete space}
+	The balance between \textsc{exploration} and \textsc{exploitation} is one of the most challanging task in \textsc{RL}.
+	The most common is the \textbf{\textepsilon-greedy}:
+	\begin{equation}
+  \pi(s)=\begin{cases}
+    \text{random action}, & \text{if $\xi < \epsilon$}.\\
+    argmax Q(s, a), & \text{otherwise}.
+  \end{cases}
+\end{equation}
+	With \textsc{\textepsilon-greedy}, at each time step, the agent selects a random action with a fixed probability, $0 \leq \epsilon \leq 1$, instead of selecting the learned optimal action.
+\end{frame}
+
+\begin{frame}{Exploration in discrete space}
+	\textsc{\textepsilon-greedy} must be tuned and it is fixed during the training. In contrast, \textsc{Value-Difference Based Exploration} adapts the exploration-probability based on fluctuations of confidence
+	\cite{tokic2011value}.
+	\begin{columns}
+		\begin{column}{0.1\textwidth}\end{column}
+		\begin{column}{0.4\textwidth}
+	\begin{figure}
+		\begin{tabular}{ |c|c|c|c| } 
+		 \hline
+			\textbf{A1} & \textbf{A2} & \textbf{A3} & \textbf{A4}  \\ [0.5ex] 
+		 \hline
+		 \hline
+			 0.21 & 0.27 & \textbf{0.30} & 0.21 \\ 
+		 \hline
+		\end{tabular}
+		\caption{Low confidence, flat likelihood}
+	\end{figure}
+
+		\end{column}
+		\begin{column}{0.4\textwidth}
+	\begin{figure}
+		\begin{tabular}{ |c|c|c|c| } 
+		 \hline
+			\textbf{A1} & \textbf{A2} & \textbf{A3} & \textbf{A4}  \\ [0.5ex] 
+		 \hline
+		 \hline
+			 0.21 & 0.07 & \textbf{0.70} & 0.01 \\ 
+		 \hline
+		\end{tabular}
+		\caption{High confidence, sharp likelihood}
+	\end{figure}
+
+		\end{column}
+		\begin{column}{0.1\textwidth}\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Continuous space}
+	Applications of \textsc{RL} require continuous state spaces defined by means of continuous variables \textit{e.g. position, velocity, torque}. 
+	\begin{itemize}
+		\item \begin{alertblock}{Single Output}		
+				Like in \textsc{DDPG} algorithm. The \textsc{NN} yields only one output.
+			\end{alertblock}
+		\pause
+		\item \begin{alertblock}{Probability distribution}
+The network yields a distribution. For convenience usually it is a \textsc{normal distribution} defined by 2 outputs: \textsc{\textmugreek}  and \textsc{\textsigma}.		
+			\end{alertblock}			
+	\end{itemize}		
+\end{frame}
+\begin{frame}{Deep Q-Network}
+	\textsc{NN} comes into play by approximating state-action value pairs $\mathbf{Q_t(s, a)}$.
+	
+	\begin{alertblock}{Double network}
+	Other the main network, a sibling network (\textsc{target}) is used in training for adjusting values $Q$, the second network is periodically aligned the the main network.	 
+	\end{alertblock}
+	\begin{alertblock}{Priority experience replay}
+	Past state/action/reward tuples are kept also for future iterations. Tuples with higher error in evaluation are retained longer. 
+	\end{alertblock}
+	\faBullhorn\hspace{2pt}First disruptive advance in \textsc{Deep RL} in 2015 by DeepMind
+	\cite{mnih2015human}. 
+\end{frame}
+
+\section{Actor-Critic}
+\begin{frame}{Policy-based algorithm}
+	\textsc{actor-critic} methods lay in the family of \textsc{policy-based} algorithms.
+	Differently by \textsc{value-based} ones - like \textsc{DQN} - the main network (\textsc{actor}) learns directly the action $\mathbf{a_\pi (s)}$ to return for a given state $s$.
+	
+	\faBullhorn\vspace{2pt} Therefore there is no $argmax\,Q_\pi(s, A)$ among all $Q_\pi(s)$ for a given state
+\end{frame}
+
+\begin{frame}{Actor-Critic}
+	\textsc{actor-critic} defines an architecture based on 2 parts:
+	\begin{wrapfigure}{R}{0.3\textwidth}
+		\includegraphics[scale=0.2]{img/agreen.png}
+	\end{wrapfigure}
+	\begin{alertblock}{Actor}
+	Main \textsc{NN} which infers the action for a given state ($s_t\,\rightarrow\, a$)
+	\end{alertblock}
+	\vfill
+	\begin{wrapfigure}{R}{0.3\textwidth}
+		\includegraphics[scale=0.2]{img/ayellow.png}
+	\end{wrapfigure}
+	\begin{alertblock}{Critic}
+	Secondary \textsc{NN} used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state-action pair. $s_t, a_t\,\rightarrow\, Q(s, a)$
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}{Advantage function for incremental learning}
+	The \textsc{advantage} technique is used to give a  evaluation of the last action (reward) \textit{compared} to the average of other actions - so far performed - in a given state.
+\pause
+
+It answers the following question:	
+
+	\centering
+	\texttt{Is last action more rewarding than others in such scenario?}
+\pause
+	\begin{alertblock}{Yes}
+		Action's likeliwood is encouraged i.e. actor gradients are pushed \textit{toward} this action.
+	\end{alertblock}
+	\begin{alertblock}{No}
+		Action's likeliwood is discouraged i.e. actor gradients are pushed \textit{away} from this action. 
+	\end{alertblock}
+\end{frame}
+
 \begin{frame}[allowframebreaks]{References}
 
   \bibliography{rl}
   \bibliographystyle{abbrv}
 
 \end{frame}
-
-\begin{frame}[allowframebreaks]{List of Figures}
-    \listoffigures
-\end{frame}
-
 \end{document}

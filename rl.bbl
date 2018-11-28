@@ -1,9 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{arulkumaran2017brief}
 K.~Arulkumaran, M.~P. Deisenroth, M.~Brundage, and A.~A. Bharath.
 \newblock A brief survey of deep reinforcement learning.
 \newblock {\em arXiv preprint arXiv:1708.05866}, 2017.
+
+\bibitem{bengio2013representation}
+Y.~Bengio, A.~Courville, and P.~Vincent.
+\newblock Representation learning: A review and new perspectives.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  35(8):1798--1828, 2013.
 
 \bibitem{gf-gp}
 {Giancarlo Frison}.
@@ -11,6 +17,11 @@ K.~Arulkumaran, M.~P. Deisenroth, M.~Brundage, and A.~A. Bharath.
 \newblock 2018.
 \newblock { link
   https://labs.cx.sap.com/2018/07/02/first-steps-on-evolutionary-systems/}.
+
+\bibitem{hornik1989multilayer}
+K.~Hornik, M.~Stinchcombe, and H.~White.
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock {\em Neural networks}, 2(5):359--366, 1989.
 
 \bibitem{mdp-process}
 {J. Zico Kolter}.
@@ -23,6 +34,12 @@ K.~Arulkumaran, M.~P. Deisenroth, M.~Brundage, and A.~A. Bharath.
 \newblock 2015 darpa robotics challange.
 \newblock {Public domain}.
 
+\bibitem{mnih2015human}
+V.~Mnih, K.~Kavukcuoglu, D.~Silver, A.~A. Rusu, J.~Veness, M.~G. Bellemare,
+  A.~Graves, M.~Riedmiller, A.~K. Fidjeland, G.~Ostrovski, et~al.
+\newblock Human-level control through deep reinforcement learning.
+\newblock {\em Nature}, 518(7540):529, 2015.
+
 \bibitem{Montague1999}
 P.~Montague.
 \newblock {Reinforcement Learning: An Introduction, by Sutton, R.S. and Barto,
@@ -32,6 +49,13 @@ P.~Montague.
 \bibitem{donkey}
 {Omanomanoman}.
 \newblock {CC BY-SA 4.0, https://commons.wikimedia.org/}.
+
+\bibitem{tokic2011value}
+M.~Tokic and G.~Palm.
+\newblock Value-difference based exploration: adaptive control between
+  epsilon-greedy and softmax.
+\newblock In {\em Annual Conference on Artificial Intelligence}, pages
+  335--346. Springer, 2011.
 
 \bibitem{dota2}
 {Valve Corporation}.

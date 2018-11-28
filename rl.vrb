@@ -3,7 +3,8 @@ Deep  learning  enables  RL  to  scale  to  decision-making
 problems  that  were  previously  intractable,  i.e.,  settings  with
 high-dimensional  state  and  action  spaces. \cite{arulkumaran2017brief}
 ^^I\begin{itemize}
-^^I^^I\item Universal function approximator
-^^I^^I\item Representation learning
+^^I^^I\item \alert{Universal function approximator} Multilayer neural networks can approximate any continuous function to any degree of accuracy \cite{hornik1989multilayer}.
+^^I^^I\pause
+^^I^^I\item \alert{Representation learning} Automatically discover the representations needed for feature detection or classification from raw data, also known as \textsc{feature engeneering} \cite{bengio2013representation}.
 ^^I\end{itemize}
 ^^INeural networks can learn the approximated value of $\mathbf{V_s}$ or $\mathbf{Q(s, a)}$ for any given \textsc{state/action space}.
