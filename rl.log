@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.10.16)  4 DEC 2018 12:49
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.10.16)  4 DEC 2018 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1768,19 +1768,28 @@ File: img/up-right.png Graphic file (type bmp)
 
 [26
 
-] [27
+]
+Overfull \hbox (5.58pt too wide) in paragraph at lines 435--436
+[][][][][][]   [][][]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27
 
 ]
+[28]
 File: img/dota2.jpg Graphic file (type bmp)
 <img/dota2.jpg>
- [28
+ [29
 
 ]
 \openout4 = `rl.vrb'.
 
- (./rl.vrb) [29
+ (./rl.vrb) [30
 
-] (./rl.vrb) [30
+] (./rl.vrb) [31
 
 ]
 .................................................
@@ -1809,7 +1818,7 @@ File: img/dota2.jpg Graphic file (type bmp)
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: <->"Fira Sans
 . Italic/OT:script=latn;language=DFLT;+tnum;+smcp;mapping=tex-text;"
 .................................................
- [31
+ [32
 
 ]
 LaTeX Font Info:    Try loading font information for LGR+FiraSansLight(0) on in
@@ -1824,7 +1833,7 @@ LaTeX Font Warning: Font shape `LGR/FiraSansLight(0)/bx/n' undefined
 LaTeX Font Warning: Font shape `LGR/FiraSansLight(0)/m/sc' undefined
 (Font)              using `LGR/cmr/m/n' instead on input line 483.
 
-[32
+[33
 
 ]
 Overfull \hbox (0.89592pt too wide) in paragraph at lines 520--520
@@ -1836,9 +1845,7 @@ Overfull \hbox (0.89592pt too wide) in paragraph at lines 520--520
  [] 
  []
 
-[33
-
-] [34
+[34
 
 ] [35
 
@@ -1847,6 +1854,8 @@ Overfull \hbox (0.89592pt too wide) in paragraph at lines 520--520
 ] [37
 
 ] [38
+
+] [39
 
 ]
 File: img/agreen.png Graphic file (type bmp)
@@ -1858,13 +1867,13 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 
 File: img/ayellow.png Graphic file (type bmp)
 <img/ayellow.png>
-[39
+[40
 
-] [40] [41
-
-] [42
+] [41] [42
 
 ] [43
+
+] [44
 
 ]
 File: img/agreen.png Graphic file (type bmp)
@@ -1884,7 +1893,7 @@ Overfull \hbox (8.46066pt too wide) in paragraph at lines 704--704
 Overfull \vbox (21.69362pt too high) detected at line 704
  []
 
-[44
+[45
 
 ]
 File: img/agreen.png Graphic file (type bmp)
@@ -1896,7 +1905,7 @@ Overfull \hbox (22.73787pt too wide) in paragraph at lines 806--806
  [] 
  []
 
-[45
+[46
 
 ] (./rl.bbl
 File: beamericonarticle.pdf Graphic file (type pdf)
@@ -1929,15 +1938,15 @@ Missing character: There is no 先 in font Fira Sans Light/OT:script=latn;langua
 e=DFLT;mapping=tex-text;!
 Missing character: There is no 生 in font Fira Sans Light/OT:script=latn;languag
 e=DFLT;mapping=tex-text;!
-) [46
-
-] [47
-
+) [47
 
 ] [48
 
 
 ] [49
+
+
+] [50
 
 
 ]
@@ -1961,12 +1970,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47022 strings out of 493007
- 1087466 string characters out of 6136718
+ 47020 strings out of 493007
+ 1087448 string characters out of 6136718
  1278965 words of memory out of 5000000
- 50177 multiletter control sequences out of 15000+600000
+ 50175 multiletter control sequences out of 15000+600000
  540518 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  73i,14n,98p,10458b,1964s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rl.pdf (49 pages).
+Output written on rl.pdf (50 pages).
