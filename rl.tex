@@ -236,33 +236,24 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 	\end{columns}
 	The problem is to define the best $\pmb{\pi}$. Value function is computed by iterative policy evaluation. 
 \end{frame}
-
-\begin{frame}
-	\frametitle{Grid World}
+\begin{frame}{Iteration 1}
 	\begin{columns}
 		\begin{column}{0.1\textwidth}
 		\end{column}
-		\begin{column}{0.2\textwidth}
-			\textbf{Iteration}
+		\begin{column}{0.4\textwidth}
+			\textbf{Calculated $V_1$}
 		\end{column}
-		\begin{column}{0.3\textwidth}
-			\textbf{Calculated $V_k$}
-		\end{column}
-		\begin{column}{0.3\textwidth} 
-			\textbf{Policy $\pi_k$}
+		\begin{column}{0.4\textwidth} 
+			\textbf{Policy $\pi_1$}
 		\end{column}
 		\begin{column}{0.1\textwidth}
 		\end{column}
 	\end{columns}
-	\vfill
 	\begin{columns}
 		\begin{column}{0.1\textwidth}
 		\end{column}
-		\begin{column}{0.2\textwidth}
-			k = 1
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}[scale=1.1]
+		\begin{column}{0.4\textwidth}
+			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { 0 };
 			\node at (-0.25,+0.75) {-1};
@@ -283,8 +274,8 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			\node at (+0.75,-0.75) { 0  };
 			\end{tikzpicture}
 		\end{column}
-		\begin{column}{0.3\textwidth} 
-			\begin{tikzpicture}[scale=1.1]
+		\begin{column}{0.4\textwidth} 
+			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { \faFlagCheckered };
 			\node at (-0.25,+0.75) { $\leftarrow$ };
@@ -308,15 +299,26 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 		\begin{column}{0.1\textwidth}
 		\end{column}
 	\end{columns}
-	\vfill
+
+\end{frame}
+\begin{frame}{Iteration 2}
 	\begin{columns}
 		\begin{column}{0.1\textwidth}
 		\end{column}
-		\begin{column}{0.2\textwidth}
-			k = 2
+		\begin{column}{0.4\textwidth}
+			\textbf{Calculated $V_2$}
 		\end{column}
-		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}[scale=1.1]
+		\begin{column}{0.4\textwidth} 
+			\textbf{Policy $\pi_2$}
+		\end{column}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+	\end{columns}
+	\begin{columns}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { 0 };
 			\node at (-0.25,+0.75) {-1.7};
@@ -337,8 +339,8 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			\node at (+0.75,-0.75) { 0  };
 			\end{tikzpicture}
 		\end{column}
-		\begin{column}{0.3\textwidth} 
-			\begin{tikzpicture}[scale=1.1]
+		\begin{column}{0.4\textwidth} 
+			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { \faFlagCheckered };
 			\node at (-0.25,+0.75) { $\leftarrow$ };
@@ -362,15 +364,26 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 		\begin{column}{0.1\textwidth}
 		\end{column}
 	\end{columns}
-	\vfill
+
+\end{frame}
+\begin{frame}{Iteration 3}
 	\begin{columns}
 		\begin{column}{0.1\textwidth}
 		\end{column}
-		\begin{column}{0.2\textwidth}
-			k = 3
+		\begin{column}{0.4\textwidth}
+			\textbf{Calculated $V_3$}
 		\end{column}
-		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}[scale=1.1]
+		\begin{column}{0.4\textwidth} 
+			\textbf{Policy $\pi_3$}
+		\end{column}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+	\end{columns}
+	\begin{columns}
+		\begin{column}{0.1\textwidth}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { 0 };
 			\node at (-0.25,+0.75) {-2.4};
@@ -391,8 +404,8 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			\node at (+0.75,-0.75) { 0  };
 			\end{tikzpicture}
 		\end{column}
-		\begin{column}{0.3\textwidth} 
-			\begin{tikzpicture}[scale=1.1]
+		\begin{column}{0.4\textwidth} 
+			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { \faFlagCheckered };
 			\node at (-0.25,+0.75) { $\leftarrow$ };
@@ -416,7 +429,9 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 		\begin{column}{0.1\textwidth}
 		\end{column}
 	\end{columns}
+
 \end{frame}
+
 
 \section{Neural Networks in RL}
 \begin{frame}{Beyond the Gridworld}
