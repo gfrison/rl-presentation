@@ -175,7 +175,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 \begin{frame}
 	\frametitle{Actions and States}
 	\begin{figure}
-	\includegraphics[scale=0.2]{img/mdp-states.png}
+	\includegraphics[scale=0.3]{img/mdp-states.png}
 	\caption{Model representation of MDP \cite{mdp-process}}
 	\end{figure}
 	MDP strives to find the best $\pi$ to all possible states. 
@@ -183,23 +183,13 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 \end{frame}
 
 \begin{frame}
-	\frametitle{How to evaluate an Agent?}
-	Given that:
-	\begin{itemize}
-		\item Policy $\pmb{\pi}$ defines a particular way of acting.
-		\item $\mathbf{v_π(s)}$ is the expected return from $\mathbf{s}$ following $\pmb{\pi}$ \emph{thereafter}.
-		\item $\mathbf{q_π(s, a)}$ is the $\mathbf{v_π(s)}$ taking action $\mathbf{a}$
-		\item For maximizing future rewards, only the $\mathbf{max}$ $Q_\pi$ is considered. 
-		\item $\pmb{\gamma}$ is the rewards' discount factor. 
-	\end{itemize}
+	In a multi-step process the total return $G$ is the \textit{discounted} sum of rewards, from the begin state to the terminal state:
+	$$ G_{\pi} = r_0+\gamma r_1 + \gamma^2 r_2 + ... \gamma^n r_{n}$$
+	\textsc{bellman equation}: The value of a state $V_s$ is the \textit{averaged} reward obtained in that state plus the sum of all values following $\pi$ thereafter.
 	
-	A recursive algorithm could be indentified, known as the \textsc{Bellman equation}. Iteratevely computes the value $\mathbf{Q}$ from the terminal state:
-	$$ \mathbf{Q_t(s, a) = R_{t + 1} + \gamma max[v(S_{t+1})]} $$
-
-	
-		
+	The goal of \textsc{RL} is to find the \textit{optimal} $\pi$ with highest $G$
+	$$ \pi = argmax \sum_s{r+\gamma v_{\pi}(s)} $$
 \end{frame}
-
 \begin{frame}
 	\frametitle{Grid World}
 	\begin{columns}
@@ -229,8 +219,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			\begin{itemize}
 				\item $ A = {up, down, right, left}$
 				\item Terminal states are the flagged boxes.		
-				\item $R_t = 0$ for terminal states.
-				\item $R_t = -1$ for other states.
+				\item $R_t = -1$ for all states.
 			\end{itemize}			 
 		\end{column}
 	\end{columns}
@@ -432,7 +421,33 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 
 \end{frame}
 
-sc
+\begin{frame}{Temporal difference}
+	\begin{alertblock}{Model-free learning} 
+	The learning comes only through raw experiences (\textit{episodes}) when there is no prior knowledge of the environment.
+	\end{alertblock}
+	
+	\begin{alertblock}{Bootstrapping} 
+	Value estimations are based partly on other learned estimations.
+	\end{alertblock}
+	Bootstrapping helps to increase the stability of estimations.
+	$$ V(s_t) = V(s_t)  + \alpha (r_{t+1} + \gamma V(s_{t+1}) - V(s_t)) $$
+\end{frame}
+
+\begin{frame}
+	\frametitle{How to evaluate an Agent?}
+	Given that:
+	\begin{itemize}
+		\item Policy $\pmb{\pi}$ defines a particular way of acting.
+		\item $\mathbf{v_π(s)}$ is the expected return from $\mathbf{s}$ following $\pmb{\pi}$ \emph{thereafter}.
+		\item $\mathbf{q_π(s, a)}$ is the $\mathbf{v_π(s)}$ taking action $\mathbf{a}$
+		\item For maximizing future rewards, only the $\mathbf{max}$ $Q_\pi$ is considered. 
+		\item $\pmb{\gamma}$ is the rewards' discount factor. 
+	\end{itemize}
+	
+	A recursive algorithm could be indentified, known as the \textsc{Bellman equation}. Iteratevely computes the value $\mathbf{Q}$ from the terminal state:
+	$$ \mathbf{Q_t(s, a) = R_{t + 1} + \gamma max[v(S_{t+1})]} $$
+\end{frame}
+
 \section{Neural Networks in RL}
 \begin{frame}{Beyond the Gridworld}
 	In the Gridworld every state value $\mathbf{v_t}$ is stored in a table. 
