@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
@@ -19,8 +19,53 @@
 %\bibliography{rl}
 %\usepackage{natbib}
 
+
+\usepackage{amssymb} % needed for math
+\usepackage{amsmath} % needed for math
+\usepackage{listings} % needed for the inclusion of source code
+
+% the following is needed for syntax highlighting
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  language=Java,                  % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+
+% this is needed for forms and links within the text
+\usepackage{hyperref}  
+
+
+
+
 \title{A Brief Survey of Reinforcement Learning}
-\subtitle{A modern beamer theme}
+\subtitle{Short walk-through on building learning agents}
 \date{\today}
 % \date{11 Dec 2018}
 \author{Giancarlo Frison}
@@ -32,7 +77,7 @@
 
 \maketitle
 
-\begin{frame}{Table of contents}
+\begin{frame}[allowframebreaks]{Table of contents}
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents[hideallsubsections]
 \end{frame}
@@ -47,20 +92,25 @@
 	\textsc{Reinforcement learning} is an area of machine learning concerned with how software agents ought to take actions in an environment so as to maximize some notion of cumulative reward.
 \end{frame}
 
-\begin{frame}[fragile]{Challenges in RL}
-	RL  vision  is about creating  systems that  are  capable  of  learning  how  to  adapt  in  the  real  world, solely based on trial-and-error.
-	
+\begin{frame}{Challenges in RL}
+	RL  vision  is about creating  systems that  are  capable  of  learning  how  to  adapt  in  the  real  world, solely based on trial-and-error.	
 	Challenges:
-	\begin{itemize}
-		\item The  optimal  policy  must  be  inferred  by  interacting with the environment. The only learning signal
+	\begin{alertblock}{Reward signal}
+	The  optimal  policy  must  be  inferred  by  interacting with the environment. The only learning signal
 the agent receives is the reward.
-		\item Agents  must  deal  with  long-range  time  dependencies:
+	\end{alertblock}
+	\begin{alertblock}{Credit assignment problem}
+	Agents  must  deal  with  long-range  time  dependencies:
 Often the consequences of an action only materialise after
 many transitions of the environment \cite{Montague1999}.
-	\end{itemize}
+	\end{alertblock}
+	\begin{alertblock}{Non stationary environments}
+	Especially in multi-agent environments, in the same circumstances of state $s_t$ and action $a_t$ returns different outcomes.
+	\end{alertblock}
+
 \end{frame}
 
-\begin{frame}[fragile]{What it is Not}
+\begin{frame}[fragile]{Difference from other optimizations}
 Although RL can induce to an optimization, there are major differences within:
   \begin{itemize}[<+- | alert@+>]
     \item {Supervised learning}
@@ -121,7 +171,7 @@ $f(x)$ is \textsc{differentiable} when it has always a finite derivative along t
 \begin{frame}{Multi-armed Bandit}
 	\begin{figure}[t!]	
 	\centering
-	\includegraphics[scale=0.2]{img/Las_Vegas_slot_machines.jpg}
+	\includegraphics[scale=0.15]{img/Las_Vegas_slot_machines.jpg}
 	\end{figure}
 	The multi-armed bandit problem has been the subject of decades of intense study in statistics, operations research, electrical engineering, computer science, and economics \cite{bandit}
 \end{frame}
@@ -130,7 +180,7 @@ $f(x)$ is \textsc{differentiable} when it has always a finite derivative along t
 	\frametitle{\begin{math} Q \end{math} Value's Action}
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[scale=0.25]{img/bandit-reward-dist.png}
+		\includegraphics[scale=0.20]{img/bandit-reward-dist.png}
 	\end{figure}
 	An example bandit problem \cite{Montague1999}. Obtained measures after repeated pullings with 10 arms.
 \end{frame}
@@ -166,7 +216,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 \begin{frame}
 	\frametitle{Definition of MDP}
 	\begin{figure}
-		\includegraphics[scale=0.15]{img/2015_DARPA_Robotics_Challenge_150606-N-PO203-090.jpg}	
+		\includegraphics[scale=0.1]{img/2015_DARPA_Robotics_Challenge_150606-N-PO203-090.jpg}	
 		\caption{2015 DARPA Robotics Challange \cite{mdp-robot}}
 	\end{figure}
 	Despite as in bandits, MDP formalizes the decision making (Policy $\pi$) in sequential steps, aggregated in Episodes. 
@@ -193,6 +243,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 \begin{frame}
 	\frametitle{Grid World}
 	\begin{columns}
+		\begin{column}{0.1\textwidth}\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
@@ -433,20 +484,20 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 	$$ V(s_t) = V(s_t)  + \alpha (r_{t+1} + \gamma V(s_{t+1}) - V(s_t)) $$
 \end{frame}
 
-\begin{frame}
-	\frametitle{How to evaluate an Agent?}
-	Given that:
-	\begin{itemize}
-		\item Policy $\pmb{\pi}$ defines a particular way of acting.
-		\item $\mathbf{v_π(s)}$ is the expected return from $\mathbf{s}$ following $\pmb{\pi}$ \emph{thereafter}.
-		\item $\mathbf{q_π(s, a)}$ is the $\mathbf{v_π(s)}$ taking action $\mathbf{a}$
-		\item For maximizing future rewards, only the $\mathbf{max}$ $Q_\pi$ is considered. 
-		\item $\pmb{\gamma}$ is the rewards' discount factor. 
-	\end{itemize}
-	
-	A recursive algorithm could be indentified, known as the \textsc{Bellman equation}. Iteratevely computes the value $\mathbf{Q}$ from the terminal state:
-	$$ \mathbf{Q_t(s, a) = R_{t + 1} + \gamma max[v(S_{t+1})]} $$
-\end{frame}
+%\begin{frame}
+%	\frametitle{How to evaluate an Agent?}
+%	Given that:
+%	\begin{itemize}
+%		\item Policy $\pmb{\pi}$ defines a particular way of acting.
+%		\item $\mathbf{v_π(s)}$ is the expected return from $\mathbf{s}$ following $\pmb{\pi}$ \emph{thereafter}.
+%		\item $\mathbf{q_π(s, a)}$ is the $\mathbf{v_π(s)}$ taking action $\mathbf{a}$
+%		\item For maximizing future rewards, only the $\mathbf{max}$ $Q_\pi$ is considered. 
+%		\item $\pmb{\gamma}$ is the rewards' discount factor. 
+%	\end{itemize}
+%	
+%	A recursive algorithm could be indentified, known as the \textsc{Bellman equation}. Iteratevely computes the value $\mathbf{Q}$ from the terminal state:
+%	$$ \mathbf{Q_t(s, a) = R_{t + 1} + \gamma max[v(S_{t+1})]} $$
+%\end{frame}
 
 \section{Neural Networks in RL}
 \begin{frame}{Beyond the Gridworld}
@@ -536,15 +587,12 @@ high-dimensional  state  and  action  spaces. \cite{arulkumaran2017brief}
 
 \begin{frame}{Continuous space}
 	Applications of \textsc{RL} require continuous state spaces defined by means of continuous variables \textit{e.g. position, velocity, torque}. 
-	\begin{itemize}
-		\item \begin{alertblock}{Single Output}		
+		\begin{alertblock}{Single Output}		
 				Like in \textsc{DDPG} algorithm. The \textsc{NN} yields only one output.
-			\end{alertblock}
-		\pause
-		\item \begin{alertblock}{Probability distribution}
-The network yields a distribution. For convenience usually it is a \textsc{normal distribution} defined by 2 outputs: \textsc{\textmugreek}  and \textsc{\textsigma}.		
-			\end{alertblock}			
-	\end{itemize}		
+		\end{alertblock}
+		\begin{alertblock}{Probability distribution}
+The network yields a distribution. For convenience usually it is a \textsc{normal distribution} defined by 2 outputs: \textbf{\textsc{\textmugreek}}  and \textbf{\textsc{\textsigma}}.		
+		\end{alertblock}			
 \end{frame}
 \begin{frame}{Deep Q-Network}
 	\textsc{NN} comes into play by approximating state-action value pairs $\mathbf{Q_t(s, a)}$.
@@ -569,19 +617,27 @@ The network yields a distribution. For convenience usually it is a \textsc{norma
 
 \begin{frame}{Actor-Critic}
 	\textsc{actor-critic} defines an architecture based on 2 parts:
-	\begin{wrapfigure}{R}{0.3\textwidth}
+	\begin{columns}[T]
+		\begin{column}{0.1\textwidth}
 		\includegraphics[scale=0.2]{img/agreen.png}
-	\end{wrapfigure}
-	\begin{alertblock}{Actor}
-	Main \textsc{NN} which infers the action for a given state ($s_t\,\rightarrow\, a$)
-	\end{alertblock}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+			\begin{alertblock}{Actor}
+			Main \textsc{NN} which infers the action for a given state ($s_t\,\rightarrow\, a$)
+			\end{alertblock}
+		\end{column}
+	\end{columns}
 	\vfill
-	\begin{wrapfigure}{R}{0.3\textwidth}
+	\begin{columns}[T]
+		\begin{column}{0.1\textwidth}
 		\includegraphics[scale=0.2]{img/ayellow.png}
-	\end{wrapfigure}
-	\begin{alertblock}{Critic}
-	Secondary \textsc{NN} used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state-action pair. $s_t, a_t\,\rightarrow\, Q(s, a)$
-	\end{alertblock}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+			\begin{alertblock}{Critic}
+Secondary \textsc{NN} used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state-action pair. $s_t, a_t\,\rightarrow\, Q(s, a)$							\end{alertblock}
+		\end{column}
+	\end{columns}
+	
 \end{frame}
 
 \begin{frame}{Advantage function for incremental learning}
@@ -820,7 +876,76 @@ It answers the following question:
 
 \end{frame}
 
+\section{Deep Deterministic Policy Gradient}
+\begin{frame}{DDPG}
+	Especially effective in \textit{continuous space}.
+	Derived from \textsc{actor-critic} and \textsc{dqn} it uses 4 networks. 
+	\begin{alertblock}{Value/action networks}
+		Likewise \textsc{ac} there is a distinction between value and action networks.
+	\end{alertblock}
+	\begin{alertblock}{Duplication of \textsc{ac} networks}
+		For stability those networks are duplicated.
+	\end{alertblock}	
+	\begin{alertblock}{Replay buffer}
+		Likewise \textsc{dqn} an history of past experiences is reused.
+	\end{alertblock}	
+\end{frame}
+\begin{frame}{Gradient propagation}
+	Despite others tecniques, \textsc{ddpg} improves the actual $\pi$ by applying the gradient obtained during the training iteration, from the value network (critic) to the action network (actor)
+	\begin{figure}[t!]	
+	\centering
+	\includegraphics[scale=2]{img/pantogra.png}
+	\caption{Like with a pantograph, the gradient $V_s$ is applied to the $\pi$ network for a similar effect, without knowing the value of $\pi$.}
+	\end{figure}
+\end{frame}
 
+\section{Asgard}
+\begin{frame}{Asgard utility framework}
+	\begin{columns}
+		\begin{column}{0.8\textwidth}
+		Java utility for training model-free agents by means of \textsc{RL}. It uses \textsc{dl4j} for neural networks and brings following algorithms:
+		\begin{alertblock}{DQN}
+			Deep-Q with \textsc{prioritized memory replay} and \textsc{Value-Difference Based Exploration}. 
+		\end{alertblock}
+		\begin{alertblock}{A3C}
+			Asynchronous advantage actor critic.
+		\end{alertblock}		
+		\end{column}
+		\begin{column}{0.2\textwidth}
+			\includegraphics[scale=0.4]{img/asgard.jpg}
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}{Easy API}
+\lstinputlisting[language=Java]{asgard1.java}
+\end{frame}
+
+\begin{frame}{Flow}
+	\textsc{asgard} provides extensible interfaces for reactive flow patterns.
+		\begin{alertblock}{Agent producer}
+			Creates training (markovian or not) agents. 
+		\end{alertblock}
+		\begin{alertblock}{Environment}
+			Represent the environment for training e.g. OpenAI Gym.
+		\end{alertblock}
+		\begin{alertblock}{Episodes collector}
+			Gathers a batch of episodes and then execute the training iteration.
+		\end{alertblock}
+		\begin{alertblock}{Threshold guards}
+			When some metrics (e.g. averaged reward) are met, the training stops.
+		\end{alertblock}
+		\begin{alertblock}{Player}
+			Agents are ready for inference and model can be stored.
+		\end{alertblock}
+\end{frame}
+
+{\setbeamercolor{palette primary}{fg=black, bg=yellow}
+\begin{frame}[standout]
+  Demo
+\end{frame}
+}
 \begin{frame}[allowframebreaks]{References}
 
   \bibliography{rl}

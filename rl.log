@@ -1,8 +1,8 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2018.12.3)  7 DEC 2018 11:05
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2018.12.3)  10 DEC 2018 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**rl.tex
+**rl
 (./rl.tex
 LaTeX2e <2018-04-01> patch level 5
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -100,8 +100,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen125
 \Gm@dimlist=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -1148,7 +1148,7 @@ LaTeX Info: Redefining \scshape on input line 3920.
 LaTeX Info: Redefining \upshape on input line 3925.
 LaTeX Info: Redefining \em on input line 3955.
 LaTeX Info: Redefining \emph on input line 3980.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 4030.
 
 LaTeX Info: Redefining \- on input line 4034.
@@ -1493,6 +1493,34 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \WF@everypar=\toks53
 Package: wrapfig 2003/01/31  v 3.6
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count347
+\lst@gtempboxa=\box73
+\lst@token=\toks54
+\lst@length=\count348
+\lst@currlwidth=\dimen333
+\lst@column=\count349
+\lst@pos=\count350
+\lst@lostspace=\dimen334
+\lst@width=\dimen335
+\lst@newlines=\count351
+\lst@lineno=\count352
+\lst@maxwidth=\dimen336
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count353
+\lst@skipnumbers=\count354
+\lst@framebox=\box74
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
 (/usr/share/texlive/texmf-dist/tex/latex/beamertheme-metropolis/pgfplotsthemeto
 l.sty
 Package: pgfplotsthemetol 2017/01/23 PGFplots colors based on Paul Tol's SRON t
@@ -1500,30 +1528,30 @@ echnical note
 ) (./rl.aux)
 \openout1 = `rl.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 74.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1533,23 +1561,23 @@ LaTeX Font Info:    ... okay on input line 29.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
-* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
-* \paperwidth=364.19536pt
-* \paperheight=273.14662pt
-* \textwidth=307.28987pt
-* \textheight=244.6939pt
+* h-part:(L,W,R)=(28.45274pt, 398.3386pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=256.0748pt
+* \textwidth=398.3386pt
+* \textheight=227.62207pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=14.22636pt
-* \marginparwidth=3.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1560,8 +1588,8 @@ LaTeX Font Info:    ... okay on input line 29.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring OFF on input line 29.
+\AtBeginShipoutBox=\box75
+Package hyperref Info: Link coloring OFF on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1569,70 +1597,70 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count347
+\c@section@level=\count355
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
 
 (./rl.out) (./rl.out)
 \@outlinefile=\write5
 \openout5 = `rl.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 29.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 74.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 29.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 74.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 29.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/bx/n on input line
- 29.
+ 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/bx/n on input line
- 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 29.
+ 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 
-29.
+74.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line
- 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 29.
+ 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/FiraSansLight(0)/m/it on input line
- 29.
+ 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/FiraSansLight(0)/m/it on input lin
-e 29.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 29.
+e 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 29.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 29.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 74.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/bx/n on
- input line 29.
+ input line 74.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/bx/it 
-on input line 29.
+on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 29.
+(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  TU/FiraSansLight(0)/bx/n --> TU/FiraSansLight(0)/bx/n o
-n input line 29.
+n input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/bx/n on
- input line 29.
+ input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/bx/it 
-on input line 29.
+on input line 74.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/bx/n on input lin
-e 29.
+e 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1661,24 +1689,29 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.9).
 
+\c@lstlisting=\count356
 (./rl.nav)
-Overfull \vbox (13.79993pt too high) detected at line 33
+Overfull \vbox (15.63992pt too high) detected at line 78
  []
 
 [1
 
 ] (./rl.toc) [2
 
+] [3
+
+
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3
+) [4
 
 ]
 \openout4 = `rl.vrb'.
@@ -1687,80 +1720,83 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: img/donkey.png Graphic file (type bmp)
 <img/donkey.png>
 )
-[4
+Overfull \vbox (0.61786pt too high) detected at line 93
+ []
+
+[5
+
+] [6
 
 ]
 \openout4 = `rl.vrb'.
 
- (./rl.vrb) [5
-
-]
-\openout4 = `rl.vrb'.
-
- (./rl.vrb) [6
-
-] (./rl.vrb) [7
+ (./rl.vrb) [7
 
 ] (./rl.vrb) [8
 
-] [9
+] (./rl.vrb) [9
 
 ] [10
+
+] [11
 
 ]
 File: img/ast-crossover.png Graphic file (type bmp)
 <img/ast-crossover.png>
-
-[11
+ [12
 
 ]
 File: img/Rastrigin_function.png Graphic file (type bmp)
 <img/Rastrigin_function.png>
- [12
 
-] [13
+Overfull \vbox (22.21454pt too high) detected at line 148
+ []
+
+[13
 
 ] [14
+
+] [15
 
 ]
 File: img/Las_Vegas_slot_machines.jpg Graphic file (type bmp)
 <img/Las_Vegas_slot_machines.jpg>
- [15
+ [16
 
 ]
 File: img/bandit-reward-dist.png Graphic file (type bmp)
 <img/bandit-reward-dist.png>
- [16
-
-] [17
+ [17
 
 ] [18
 
 ] [19
 
+] [20
+
 ]
 File: img/2015_DARPA_Robotics_Challenge_150606-N-PO203-090.jpg Graphic file (ty
 pe bmp)
 <img/2015_DARPA_Robotics_Challenge_150606-N-PO203-090.jpg>
- [20
+ [21
 
 ]
 File: img/mdp-states.png Graphic file (type bmp)
 <img/mdp-states.png>
- [21
-
-] [22
+ [22
 
 ] [23
 
 ] [24
+
+] [25
 
 ]
 File: img/left-up.png Graphic file (type bmp)
 <img/left-up.png>
 File: img/down-right.png Graphic file (type bmp)
 <img/down-right.png>
- [25
+ [26
 
 ]
 File: img/down-left.png Graphic file (type bmp)
@@ -1775,12 +1811,10 @@ File: img/down-right.png Graphic file (type bmp)
 <img/down-right.png>
 File: img/up-right.png Graphic file (type bmp)
 <img/up-right.png>
+ [27
 
-[26
-
-] [27
-
-] [28
+]
+[28
 
 ] [29
 
@@ -1827,32 +1861,28 @@ File: img/dota2.jpg Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Try loading font information for LGR+FiraSansLight(0) on in
-put line 498.
-LaTeX Font Info:    No file LGRFiraSansLight(0).fd. on input line 498.
+put line 549.
+LaTeX Font Info:    No file LGRFiraSansLight(0).fd. on input line 549.
 
 
 LaTeX Font Warning: Font shape `LGR/FiraSansLight(0)/bx/n' undefined
-(Font)              using `LGR/cmr/m/n' instead on input line 498.
+(Font)              using `LGR/cmr/m/n' instead on input line 549.
 
 
 LaTeX Font Warning: Font shape `LGR/FiraSansLight(0)/m/sc' undefined
-(Font)              using `LGR/cmr/m/n' instead on input line 498.
+(Font)              using `LGR/cmr/m/n' instead on input line 549.
 
 [34
 
+] [35
+
 ]
-Overfull \hbox (0.89592pt too wide) in paragraph at lines 535--535
- [] 
- []
 
+LaTeX Font Warning: Font shape `LGR/FiraSansLight(0)/bx/sc' undefined
+(Font)              using `LGR/FiraSansLight(0)/bx/n' instead on input line 596
+.
 
-Overfull \hbox (0.89592pt too wide) in paragraph at lines 535--535
- [] 
- []
-
-[35
-
-] [36
+[36
 
 ] [37
 
@@ -1860,57 +1890,72 @@ Overfull \hbox (0.89592pt too wide) in paragraph at lines 535--535
 
 ] [39
 
-] [40
-
 ]
 File: img/agreen.png Graphic file (type bmp)
 <img/agreen.png>
 
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-585.
-
-File: img/ayellow.png Graphic file (type bmp)
-<img/ayellow.png>
-[41
-
-] [42] [43
-
-] [44
-
-] [45
-
-]
-File: img/agreen.png Graphic file (type bmp)
-<img/agreen.png>
-File: img/ayellow.png Graphic file (type bmp)
-<img/ayellow.png>
-File: img/agreen.png Graphic file (type bmp)
-<img/agreen.png>
-File: img/ayellow.png Graphic file (type bmp)
-<img/ayellow.png>
-
-Overfull \hbox (8.46066pt too wide) in paragraph at lines 719--719
- [] 
+Overfull \hbox (5.93625pt too wide) in paragraph at lines 641--641
+[][]  
  []
 
+File: img/ayellow.png Graphic file (type bmp)
+<img/ayellow.png>
 
-Overfull \vbox (21.69362pt too high) detected at line 719
+Overfull \hbox (6.53851pt too wide) in paragraph at lines 641--641
+[][]  
  []
 
-[46
+[40
+
+] [41
+
+] [42
+
+] [43
 
 ]
 File: img/agreen.png Graphic file (type bmp)
 <img/agreen.png>
 File: img/ayellow.png Graphic file (type bmp)
 <img/ayellow.png>
+File: img/agreen.png Graphic file (type bmp)
+<img/agreen.png>
+File: img/ayellow.png Graphic file (type bmp)
+<img/ayellow.png>
 
-Overfull \hbox (22.73787pt too wide) in paragraph at lines 821--821
- [] 
+Overfull \vbox (36.268pt too high) detected at line 775
  []
 
-[47
+[44
+
+]
+File: img/agreen.png Graphic file (type bmp)
+<img/agreen.png>
+File: img/ayellow.png Graphic file (type bmp)
+<img/ayellow.png>
+ [45
+
+] [46
+
+] [47
+
+]
+File: img/pantogra.png Graphic file (type bmp)
+<img/pantogra.png>
+ [48
+
+] [49
+
+]
+File: img/asgard.jpg Graphic file (type bmp)
+<img/asgard.jpg>
+ [50
+
+] (./asgard1.java) [51
+
+] [52
+
+] [53
 
 ] (./rl.bbl
 File: beamericonarticle.pdf Graphic file (type pdf)
@@ -1943,15 +1988,16 @@ Missing character: There is no 先 in font Fira Sans Light/OT:script=latn;langua
 e=DFLT;mapping=tex-text;!
 Missing character: There is no 生 in font Fira Sans Light/OT:script=latn;languag
 e=DFLT;mapping=tex-text;!
-) [48
+)
+[54
 
-] [49
-
-
-] [50
+] [55
 
 
-] [51
+] [56
+
+
+] [57
 
 
 ]
@@ -1964,25 +2010,25 @@ e=DFLT;mapping=tex-text;!
 \tf@snm=\write8
 \openout8 = `rl.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 830.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 830.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 955.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 955.
  (./rl.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 830.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 830.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 955.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 955.
 Package rerunfilecheck Info: File `rl.out' has not changed.
-(rerunfilecheck)             Checksum: BEE8859B0A26877E17A0630E818D3B33.
+(rerunfilecheck)             Checksum: 8421EE6AC86AA921AA66C2858AACC941.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 47926 strings out of 494877
- 1097546 string characters out of 6175516
- 1284040 words of memory out of 5000000
- 51002 multiletter control sequences out of 15000+600000
- 542584 words of font info for 110 fonts, out of 8000000 for 9000
+ 49242 strings out of 494877
+ 1116937 string characters out of 6175516
+ 1333422 words of memory out of 5000000
+ 52296 multiletter control sequences out of 15000+600000
+ 542645 words of font info for 116 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 73i,14n,98p,1825b,1972s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,14n,98p,1821b,1968s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rl.pdf (51 pages).
+Output written on rl.pdf (57 pages).
