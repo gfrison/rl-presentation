@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2018.12.3)  10 DEC 2018 11:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2018.12.3)  10 DEC 2018 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1940,9 +1940,13 @@ File: img/ayellow.png Graphic file (type bmp)
 ] [47
 
 ]
-File: img/pantogra.png Graphic file (type bmp)
-<img/pantogra.png>
- [48
+File: img/pantograph.png Graphic file (type bmp)
+<img/pantograph.png>
+
+Overfull \vbox (3.59174pt too high) detected at line 900
+ []
+
+[48
 
 ] [49
 
@@ -1988,8 +1992,7 @@ Missing character: There is no 先 in font Fira Sans Light/OT:script=latn;langua
 e=DFLT;mapping=tex-text;!
 Missing character: There is no 生 in font Fira Sans Light/OT:script=latn;languag
 e=DFLT;mapping=tex-text;!
-)
-[54
+) [54
 
 ] [55
 
@@ -1997,7 +2000,8 @@ e=DFLT;mapping=tex-text;!
 ] [56
 
 
-] [57
+]
+[57
 
 
 ]
@@ -2024,7 +2028,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  49242 strings out of 494877
- 1116937 string characters out of 6175516
+ 1116945 string characters out of 6175516
  1333422 words of memory out of 5000000
  52296 multiletter control sequences out of 15000+600000
  542645 words of font info for 116 fonts, out of 8000000 for 9000

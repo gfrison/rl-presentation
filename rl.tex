@@ -105,7 +105,7 @@ Often the consequences of an action only materialise after
 many transitions of the environment \cite{Montague1999}.
 	\end{alertblock}
 	\begin{alertblock}{Non stationary environments}
-	Especially in multi-agent environments, in the same circumstances of state $s_t$ and action $a_t$ returns different outcomes.
+	Especially in multi-agent environments, in the same circumstances of state $s_t$ and action $a_t$ outcomes might be different.
 	\end{alertblock}
 
 \end{frame}
@@ -232,7 +232,7 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 	In Markov processes, the selected action depends \textbf{only} on current state.
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Bellman equation}
 	In a multi-step process the total return $G$ is the \textit{discounted} sum of rewards, from the begin state to the terminal state:
 	$$ G_{\pi} = r_0+\gamma r_1 + \gamma^2 r_2 + ... \gamma^n r_{n}$$
 	\textsc{bellman equation}: The value of a state $V_s$ is the \textit{averaged} reward obtained in that state plus the sum of all values following $\pi$ thereafter.
@@ -623,7 +623,7 @@ The network yields a distribution. For convenience usually it is a \textsc{norma
 		\end{column}
 		\begin{column}{0.7\textwidth}
 			\begin{alertblock}{Actor}
-			Main \textsc{NN} which infers the action for a given state ($s_t\,\rightarrow\, a$)
+			Main network which infers the action for a given state ($s_t\,\rightarrow\, a$)
 			\end{alertblock}
 		\end{column}
 	\end{columns}
@@ -634,14 +634,14 @@ The network yields a distribution. For convenience usually it is a \textsc{norma
 		\end{column}
 		\begin{column}{0.7\textwidth}
 			\begin{alertblock}{Critic}
-Secondary \textsc{NN} used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state-action pair. $s_t, a_t\,\rightarrow\, Q(s, a)$							\end{alertblock}
+Secondary network used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state-action pair. $s_t, a_t\,\rightarrow\, Q(s, a)$							\end{alertblock}
 		\end{column}
 	\end{columns}
 	
 \end{frame}
 
 \begin{frame}{Advantage function for incremental learning}
-	The \textsc{advantage} technique is used to give a  evaluation of the last action (reward) \textit{compared} to the average of other actions - so far performed - in a given state.
+	The \textsc{advantage} technique is used to give a  evaluation of the last action  \textit{compared} to the average of other actions.
 \pause
 
 It answers the following question:	
@@ -650,10 +650,10 @@ It answers the following question:
 	\texttt{Is last action more rewarding than others in such scenario?}
 \pause
 	\begin{alertblock}{Yes}
-		Action's likeliwood is encouraged i.e. actor gradients are pushed \textit{toward} this action.
+		\faThumbsUp\hspace{2pt} Action's likelihood is encouraged. Gradients are pushed \textit{toward} this action.
 	\end{alertblock}
 	\begin{alertblock}{No}
-		Action's likeliwood is discouraged i.e. actor gradients are pushed \textit{away} from this action. 
+		\faThumbsDown\hspace{2pt} Action's likelihood is discouraged. Gradients are pushed \textit{away} from this action. 
 	\end{alertblock}
 \end{frame}
 
@@ -891,10 +891,10 @@ It answers the following question:
 	\end{alertblock}	
 \end{frame}
 \begin{frame}{Gradient propagation}
-	Despite others tecniques, \textsc{ddpg} improves the actual $\pi$ by applying the gradient obtained during the training iteration, from the value network (critic) to the action network (actor)
+	Despite others tecniques, \textsc{ddpg} improves the actual $\pi$ by applying the gradient obtained during the training iteration, from the value network to the output network.
 	\begin{figure}[t!]	
 	\centering
-	\includegraphics[scale=2]{img/pantogra.png}
+	\includegraphics[scale=2]{img/pantograph.png}
 	\caption{Like with a pantograph, the gradient $V_s$ is applied to the $\pi$ network for a similar effect, without knowing the value of $\pi$.}
 	\end{figure}
 \end{frame}
