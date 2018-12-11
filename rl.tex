@@ -111,7 +111,7 @@ many transitions of the environment \cite{Montague1999}.
 \end{frame}
 
 \begin{frame}[fragile]{Difference from other optimizations}
-Although RL can induce to an optimization, there are major differences within:
+	There are major differences within:
   \begin{itemize}[<+- | alert@+>]
     \item {Supervised learning}
 	\item Mathematical optimization
@@ -173,16 +173,16 @@ $f(x)$ is \textsc{differentiable} when it has always a finite derivative along t
 	\centering
 	\includegraphics[scale=0.15]{img/Las_Vegas_slot_machines.jpg}
 	\end{figure}
-	The multi-armed bandit problem has been the subject of decades of intense study in statistics, operations research, electrical engineering, computer science, and economics \cite{bandit}
+	The multi-armed bandit problem has been the subject of decades of intense study in statistics, operations research, A/B testing, computer science, and economics \cite{bandit}
 \end{frame}
 
 \begin{frame}
 	\frametitle{\begin{math} Q \end{math} Value's Action}
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[scale=0.20]{img/bandit-reward-dist.png}
+		\includegraphics[scale=0.25]{img/bandit-reward-dist.png}
+		\caption{Obtained measures after repeated pullings with 10 arms \cite{Montague1999}.}
 	\end{figure}
-	An example bandit problem \cite{Montague1999}. Obtained measures after repeated pullings with 10 arms.
 \end{frame}
 
 \begin{frame}
@@ -191,7 +191,7 @@ $f(x)$ is \textsc{differentiable} when it has always a finite derivative along t
 	$$ Q_{n+1} = \frac{R_1 +R_2 + ... +R_{n}}{n} $$
 	A more scalable formula, updates the average with incremental and small constant:
 	$$ Q_{n+1} = Q_n + \frac{1}{n}(R_n-Q_n)$$
-	General expression of the badint algorithm at the fundation of RL. \begin{math}Target\end{math} could be considered the reward $ R $ by now.
+	General expression of the bandit algorithm, recurrent pattern in RL \begin{math}(Target\end{math} could be considered the reward $ R $ by now).
 	$$ \mathbf{NewEstimate = OldEstimate + StepSize(Target-OldEstimate)}$$
 \end{frame}
 
@@ -199,17 +199,20 @@ $f(x)$ is \textsc{differentiable} when it has always a finite derivative along t
 \frametitle{Gambler's Dilemma}
 When pulled, an arm produces a random payout drawn independently of the past. Because the distribution of payouts corresponding to each arm is not listed, the player can learn it only by experimenting.
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.1\textwidth}\end{column}
+		\begin{column}{0.4\textwidth}
 			\begin{alertblock}{Exploitation}
 		Earn more money by exploiting arms that yielded high payouts in the past.
 			\end{alertblock}
 		\end{column}
-		\begin{column}{0.5\textwidth}  %%<--- here
+		\begin{column}{0.4\textwidth}  %%<--- here
 			\begin{alertblock}{Exploration}
 		Exploring alternative arms may return higher payouts in the future.
 			\end{alertblock}
 		\end{column}
+		\begin{column}{0.1\textwidth}\end{column}
 	\end{columns}
+	There is a \textit{tradeoff} between \textsc{exploration} and \textsc{regret}.
 \end{frame}
 
 \section{Markov Decision Process}
@@ -243,8 +246,8 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 \begin{frame}
 	\frametitle{Grid World}
 	\begin{columns}
-		\begin{column}{0.1\textwidth}\end{column}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.2\textwidth}\end{column}
+		\begin{column}{0.4\textwidth}
 			\begin{tikzpicture}[scale=2]
 			\draw[step=0.5cm,color=gray] (-1,-1) grid (1,1);
 			\node at (-0.75,+0.75) { \faFlagCheckered };
@@ -266,13 +269,14 @@ When pulled, an arm produces a random payout drawn independently of the past. Be
 			\node at (+0.75,-0.75) { \faFlagCheckered  };
 			\end{tikzpicture}
 		\end{column}
-		\begin{column}{0.5\textwidth} 
+		\begin{column}{0.4\textwidth} 
 			\begin{itemize}
 				\item $ A = {up, down, right, left}$
 				\item Terminal states are the flagged boxes.		
 				\item $R_t = -1$ for all states.
 			\end{itemize}			 
 		\end{column}
+		\begin{column}{0.2\textwidth}\end{column}
 	\end{columns}
 	The problem is to define the best $\pmb{\pi}$. Value function is computed by iterative policy evaluation. 
 \end{frame}
@@ -634,7 +638,7 @@ The network yields a distribution. For convenience usually it is a \textsc{norma
 		\end{column}
 		\begin{column}{0.7\textwidth}
 			\begin{alertblock}{Critic}
-Secondary network used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state-action pair. $s_t, a_t\,\rightarrow\, Q(s, a)$							\end{alertblock}
+Secondary network used only for training, evaluates the \textsc{actor} output returning the \textit{averaged} value of state. $s_t\rightarrow\, V(s)$							\end{alertblock}
 		\end{column}
 	\end{columns}
 	
@@ -941,7 +945,7 @@ It answers the following question:
 		\end{alertblock}
 \end{frame}
 
-{\setbeamercolor{palette primary}{fg=black, bg=yellow}
+{\setbeamercolor{palette primary}{fg=white, bg=blue}
 \begin{frame}[standout]
   Demo
 \end{frame}
