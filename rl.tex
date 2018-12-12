@@ -904,46 +904,11 @@ It answers the following question:
 \end{frame}
 
 \section{Asgard}
-\begin{frame}{Asgard utility framework}
-	\begin{columns}
-		\begin{column}{0.8\textwidth}
-		Java utility for training model-free agents by means of \textsc{RL}. It uses \textsc{dl4j} for neural networks and brings following algorithms:
-		\begin{alertblock}{DQN}
-			Deep-Q with \textsc{prioritized memory replay} and \textsc{Value-Difference Based Exploration}. 
-		\end{alertblock}
-		\begin{alertblock}{A3C}
-			Asynchronous advantage actor critic.
-		\end{alertblock}		
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			\includegraphics[scale=0.4]{img/asgard.jpg}
-		\end{column}
-	\end{columns}
-	
+{\setbeamercolor{palette primary}{fg=white, bg=cyan}
+\begin{frame}[standout]
+  Missing slides for Intellectual Property
 \end{frame}
-
-\begin{frame}{Easy API}
-\lstinputlisting[language=Java]{asgard1.java}
-\end{frame}
-
-\begin{frame}{Flow}
-	\textsc{asgard} provides extensible interfaces for reactive flow patterns.
-		\begin{alertblock}{Agent producer}
-			Creates training (markovian or not) agents. 
-		\end{alertblock}
-		\begin{alertblock}{Environment}
-			Represent the environment for training e.g. OpenAI Gym.
-		\end{alertblock}
-		\begin{alertblock}{Episodes collector}
-			Gathers a batch of episodes and then execute the training iteration.
-		\end{alertblock}
-		\begin{alertblock}{Threshold guards}
-			When some metrics (e.g. averaged reward) are met, the training stops.
-		\end{alertblock}
-		\begin{alertblock}{Player}
-			Agents are ready for inference and model can be stored.
-		\end{alertblock}
-\end{frame}
+}
 
 {\setbeamercolor{palette primary}{fg=white, bg=blue}
 \begin{frame}[standout]
